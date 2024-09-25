@@ -1,0 +1,70 @@
+{
+    "name": "@debales-ai/ai-sdk",
+    "version": "1.0.0",
+    "type": "module",
+    "files": [
+        "dist/**"
+    ],
+    "sideEffects": [
+        "**/*.css"
+    ],
+    "main": "./dist/ai-sdk.umd.cjs",
+    "module": "./dist/ai-sdk.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/ai-sdk.js",
+            "require": "./dist/ai-sdk.umd.cjs",
+            "types": "./dist/index.d.ts"
+        },
+        "./dist/style.css": "./dist/style.css"
+    },
+    "scripts": {
+        "prebuild": "rm -rf dist",
+        "build": "tsc && vite build",
+        "dev": "tsc && vite build --watch",
+        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "preview": "vite preview"
+    },
+    "peerDependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@tailwindcss/typography": "^0.5.13",
+        "@types/react": "^18.2.66",
+        "@types/react-dom": "^18.2.22",
+        "@types/react-syntax-highlighter": "^15.5.13",
+        "@typescript-eslint/eslint-plugin": "^7.2.0",
+        "@typescript-eslint/parser": "^7.2.0",
+        "@vitejs/plugin-react-swc": "^3.5.0",
+        "autoprefixer": "^10.4.19",
+        "eslint": "^8.57.0",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-react-refresh": "^0.4.6",
+        "postcss": "^8.4.38",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "rollup-plugin-postcss": "^4.0.2",
+        "tailwindcss": "^3.4.3",
+        "typescript": "^5.2.2",
+        "vite": "^5.2.0",
+        "vite-plugin-dts": "^3.9.1",
+        "vite-plugin-lib-inject-css": "^2.1.1"
+    },
+    "dependencies": {
+        "@radix-ui/react-avatar": "^1.1.0",
+        "@radix-ui/react-dialog": "^1.1.1",
+        "@radix-ui/react-scroll-area": "^1.1.0",
+        "@radix-ui/react-slot": "^1.1.0",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.1.1",
+        "embla-carousel-react": "^8.1.8",
+        "lucide-react": "^0.424.0",
+        "react-markdown": "^9.0.1",
+        "remark-gfm": "^4.0.0",
+        "remark-math": "^6.0.0",
+        "tailwind-merge": "^2.4.0",
+        "tailwindcss-animate": "^1.0.7"
+    }
+}
