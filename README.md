@@ -1,73 +1,65 @@
-# Turborepo Design System starter with Changesets
+# AI SDK Monorepo
 
-This is an official React design system starter powered by Turborepo. Versioning and package publishing is handled by [Changesets](https://github.com/changesets/changesets) and fully automated with GitHub Actions.
+This monorepo contains the AI SDK, a comprehensive toolkit for building AI-powered applications with a focus on chatbot functionality.
 
-## Using this example
+## Overview
 
-Run the following command:
+The AI SDK provides a set of React components and utilities to easily integrate AI-driven features into your applications. It includes a customizable chatbot UI, markdown rendering capabilities, and various UI components.
 
-```sh
-npx create-turbo@latest -e with-changesets
-```
+## Key Features
 
-## What's inside?
+-   **ChatbotUi**: A fully-featured chatbot interface with support for text, images, links, and product information.
+-   **Markdown Rendering**: Efficient markdown parsing and rendering with support for GitHub Flavored Markdown (GFM) and mathematical expressions.
+-   **Customizable UI Components**: A collection of reusable UI components including avatars, cards, and carousels.
 
-This Turborepo includes the following:
+## Project Structure
 
-### Apps and Packages
+The monorepo is organized into the following main directories:
 
-- `docs`: A placeholder documentation site powered by [Next.js](https://nextjs.org/)
-- `@acme/core`: core React components
-- `@acme/utils`: shared React utilities
-- `@acme/tsconfig`: shared `tsconfig.json`s used throughout the monorepo
-- `@acme/eslint-config`: ESLint preset
+-   `packages/ai-sdk/`: Contains the core AI SDK components and utilities.
+-   `apps/example/`: An example application showcasing the usage of the AI SDK.
 
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
+## Repo Setup with pnpm
 
-### Utilities
+This project uses pnpm as the package manager. Follow these steps to set up the repository:
 
-This Turborepo has some additional tools already setup for you:
+1. Install [pnpm](https://pnpm.io/installation) globally if you haven't already:
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+    ```
+    npm install -g pnpm
+    ```
 
-### Useful commands
+2. Clone the repository:
 
-- `yarn build` - Build all packages and the docs site
-- `yarn dev` - Develop all packages and the docs site
-- `yarn lint` - Lint all packages
-- `yarn changeset` - Generate a changeset
-- `yarn clean` - Clean up all `node_modules` and `dist` folders (runs each package's clean script)
+    ```
+    git clone https://github.com/your-org/ai-sdk.git
+    cd ai-sdk
+    ```
 
-### Changing the npm organization scope
+3. Install dependencies:
 
-The npm organization scope for this design system starter is `@acme`. To change this, it's a bit manual at the moment, but you'll need to do the following:
+    ```
+    pnpm install
+    ```
 
-- Rename folders in `packages/*` to replace `acme` with your desired scope
-- Search and replace `acme` with your desired scope
-- Re-run `yarn install`
+4. Start the development server:
 
-## Versioning and Publishing packages
+    ```
+    pnpm run dev
+    ```
 
-Package publishing has been configured using [Changesets](https://github.com/changesets/changesets). Please review their [documentation](https://github.com/changesets/changesets#documentation) to familiarize yourself with the workflow.
+Now you're ready to start contributing to the AI SDK!
 
-This example comes with automated npm releases setup in a [GitHub Action](https://github.com/changesets/action). To get this working, you will need to create an `NPM_TOKEN` and `GITHUB_TOKEN` in your repository settings. You should also install the [Changesets bot](https://github.com/apps/changeset-bot) on your GitHub repository as well.
+Start with the [example app](./apps/example) to get a feel for the SDK and how it works.
 
-For more information about this automation, refer to the official [changesets documentation](https://github.com/changesets/changesets/blob/main/docs/automating-changesets.md)
+To add features or fix bugs fix in core AI SDK package start with the [core AI SDK package](./packages/ai-sdk)
 
-### npm
+## Contributing
 
-If you want to publish package to the public npm registry and make them publicly available, this is already setup.
+We welcome contributions to the AI SDK! Please read our contributing guidelines before submitting pull requests.
 
-To publish packages to a private npm organization scope, **remove** the following from each of the `package.json`'s
+[Contributing Guidelines](./CONTRIBUTION.md)
 
-```diff
-- "publishConfig": {
--  "access": "public"
-- },
-```
+## License
 
-### GitHub Package Registry
-
-See [Working with the npm registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#publishing-a-package-using-publishconfig-in-the-packagejson-file)
+This project is licensed under the MIT License. See the LICENSE file for details.
