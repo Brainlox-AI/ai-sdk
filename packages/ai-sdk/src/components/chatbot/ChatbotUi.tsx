@@ -35,13 +35,18 @@ export function ChatBotUi() {
         isLoading,
     } = useChat<ExtendedMessageContent>({
         initialMessage: "Hello, I'm a bot",
-        apiUrl: 'https://blossomapi-sit.azurewebsites.net/query',
+        // your API endpoint
+        apiUrl: 'https://example.com/app',
+        // field mapping
         responsefieldMapping: {
             text: 'response',
             image: 'image',
             link: 'link',
             product: 'product',
             price: 'price',
+        },
+        onError: (error) => {
+            console.error('Error:', error);
         },
     });
     const containerRef = useRef<HTMLDivElement | null>(null);

@@ -2,16 +2,15 @@ export interface languageMap {
     [key: string]: string | undefined;
 }
 
-
-
-
 export type Role = 'user' | 'assistant';
 
 export interface BaseMessageContent {
     text: string;
 }
 
-export interface BaseMessage<T extends BaseMessageContent = BaseMessageContent> {
+export interface BaseMessage<
+    T extends BaseMessageContent = BaseMessageContent,
+> {
     id: string;
     role: Role;
     createdAt: Date;
